@@ -1,0 +1,102 @@
+🚀 How to Use Postman in Real-Time Projects (Step-by-Step)
+1. Install & Set Up
+Download and install Postman
+Create a free account (optional but recommended for syncing)
+2. Understand Your Backend API
+
+Before using Postman, you should already have:
+
+Backend running (e.g., Node.js + Express)
+API endpoints like:
+GET /users
+POST /login
+PUT /profile
+DELETE /user/:id
+3. Create a New Request
+Open Postman
+Click New → HTTP Request
+Choose method:
+GET / POST / PUT / DELETE
+
+Enter API URL:
+
+http://localhost:5000/api/users
+4. Add Request Data
+👉 For GET
+No body required
+Just click Send
+👉 For POST / PUT
+Go to Body → raw → JSON
+Example:
+{
+  "name": "Sagar",
+  "email": "sagar@example.com"
+}
+5. Add Headers
+Go to Headers tab
+Example:
+Content-Type: application/json
+Authorization: Bearer <token>
+6. Use Environment Variables (Real Project Use 🔥)
+
+Instead of hardcoding URLs:
+
+Create Environment
+
+Add variables:
+
+BASE_URL = http://localhost:5000
+TOKEN = your_jwt_token
+
+Use like:
+
+{{BASE_URL}}/api/users
+7. Test Authentication APIs
+Example: Login API
+Method: POST
+
+URL:
+
+{{BASE_URL}}/api/auth/login
+Body:
+{
+  "email": "test@gmail.com",
+  "password": "123456"
+}
+Copy token from response → store in environment
+8. Automate Testing (Very Important)
+
+Go to Tests tab:
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response has token", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.token).to.exist;
+});
+9. Create Collections (Real Project Structure)
+Group APIs like:
+Auth APIs
+User APIs
+Product APIs
+10. Use Postman for Debugging
+
+In real projects:
+
+Check API errors quickly
+Validate request/response
+Test edge cases
+11. Share APIs with Team
+Export collection as JSON
+Share via GitHub or Postman workspace
+12. Use Postman in Deployment Stage
+
+Test deployed APIs:
+
+https://your-api.onrender.com/api/users
+Validate:
+Production DB
+Auth
+Performance
