@@ -1,5 +1,8 @@
 # Setting Up Cloudinary in a Node.js Express Project
 
+Cloudinary is a cloud-based service for storing, managing, optimizing, and delivering images and videos.
+
+Instead of storing uploaded files on your server, you can upload them directly to Cloudinary and save only the returned URL in your database.
 This guide will walk you through the steps to set up Cloudinary in a Node.js Express project for managing images and other media files.
 
 ## Prerequisites
