@@ -1,5 +1,19 @@
 # Nodemailer
 
+Nodemailer is a popular Node.js package that allows developers to send emails using SMTP servers, Gmail, Outlook, and other email services.
+
+Q: What is Nodemailer?
+
+A: Nodemailer is a Node.js package used to send emails from a backend application through SMTP or email service providers such as Gmail, Outlook, or custom mail servers. It is commonly used for OTP verification, password resets, and notification emails.
+
+B.Common Uses
+- Email verification
+- OTP sending
+- Password reset emails
+- Welcome emails
+- Order confirmations
+- Contact form submissions
+
 This guide provides step-by-step instructions for setting up and using Nodemailer in a Node.js application with OAuth2 authentication using `ClientID` and `ClientSecret`, along with generating a refresh token using the OAuth 2.0 Playground.
 
 ## Prerequisites
